@@ -1,0 +1,1 @@
+export * as StyledInput from './styled/input'
