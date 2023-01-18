@@ -4,57 +4,6 @@ import Button from "./Button"
 import Modal from "./Modal"
 import { useModal } from "@/lib/hooks"
 
-const Body = {
-  id: '',
-  name: '',
-  email: '',
-  region: '',
-  password: '',
-  password2: '',
-}
-const Valid = {
-  id: 99,
-  name: 99,
-  email: 99,
-  region: 99,
-  password: 99,
-  password2: 99,
-}
-// state: 미입력 -1, 비유효 0, 유효 1
-const Data = {
-  Valid: {
-    id: {
-      invalid: "10자 이상 입력해주세요",
-      void: "ID를 입력해주세요",
-      check: (v) => !v ? -1 : v.length > 9 ? 1 : 0
-    },
-    name: {
-      invalid: "10자 이상 입력해주세요",
-      void: "ID를 입력해주세요",
-      check: (v) => !v ? -1 : v.length > 9 ? 1 : 0
-    },
-    email: {
-      invalid: "10자 이상 입력해주세요",
-      void: "ID를 입력해주세요",
-      check: (v) => !v ? -1 : v.length > 9 ? 1 : 0
-    },
-    region: {
-      invalid: "10자 이상 입력해주세요",
-      void: "ID를 입력해주세요",
-      check: (v) => !v ? -1 : v.length > 9 ? 1 : 0
-    },
-    password: {
-      invalid: "10자 이상 입력해주세요",
-      void: "ID를 입력해주세요",
-      check: (v) => !v ? -1 : v.length > 9 ? 1 : 0
-    },
-    password2: {
-      invalid: "10자 이상 입력해주세요",
-      void: "ID를 입력해주세요",
-      check(v, w){ return !w ? -1 : v === w ? 1 : 0 }
-    },
-  }
-}
 function RenderInValid({name, state}){
   let msg
   if(state === 0) msg = Data.Valid[name].invalid

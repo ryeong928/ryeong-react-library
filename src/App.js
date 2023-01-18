@@ -1,51 +1,17 @@
-import styled from "styled-components";
-import Frame from "./components/Frame";
+import { validate } from "./lib/utils";
+import Routes from "./Routes";
+import {StyledPages} from './lib/styles'
 
-const StyledApp = styled.div`
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  & > section {
-    width: 400px;
-  }
-`
-
-const Data = {
-  inputForm: [
-    {
-      name: "name", label: "이름", 
-      auth: {
-        state: null,
-        check: "regex",
-        fail: "이름은 2자 이상이어야 합니다"
-      }
-    },
-    {
-      name: "email", label: "이메일", placeholder: "ex@email.com",
-      auth: {
-        state: null,
-        check: "regex",
-        fail: "이메일 형식이 아닙니다: ex@email.com"
-      }
-    },
-    {
-      name: "phone", label: "전화번호", placeholder: "0000-0000",
-      auth: {
-        state: null,
-        check: "regex",
-        fail: "전화번호 형식이 아닙니다"
-      }
-    },
-  ]
-}
 
 function App() {
+  const res1 = validate.test("email", "")
+  const res4 = validate.test("phone", "")
+  console.log(validate.msg.email[res1])
+  console.log(validate.msg.phone[res4])
   return (
-    <StyledApp>
-      <section><Frame.InputForm data={Data.inputForm}/></section>
-    </StyledApp>
+    <StyledPages.Home>
+      <Routes />
+    </StyledPages.Home>
   );
 }
 
