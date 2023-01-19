@@ -8,6 +8,7 @@ function App() {
   const res4 = validate.test("phone", "")
   console.log(validate.msg.email[res1])
   console.log(validate.msg.phone[res4])
+  
   return (
     <StyledPages.Home>
       <Routes />
